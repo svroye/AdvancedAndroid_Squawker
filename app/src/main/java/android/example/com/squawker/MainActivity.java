@@ -16,6 +16,7 @@
 
 package android.example.com.squawker;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.example.com.squawker.following.FollowingPreferenceActivity;
@@ -85,6 +86,20 @@ public class MainActivity extends AppCompatActivity implements
 
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
+        // dummy data to test with
+//        ContentValues cv = new ContentValues();
+//        cv.put(SquawkContract.COLUMN_DATE, 1487968810557L);
+//        cv.put(SquawkContract.COLUMN_AUTHOR_KEY, SquawkContract.LYLA_KEY);
+//        cv.put(SquawkContract.COLUMN_AUTHOR, "TheRealLyla");
+//        cv.put(SquawkContract.COLUMN_MESSAGE, "My nose itches...");
+//        getContentResolver().insert(SquawkProvider.SquawkMessages.CONTENT_URI, cv);
+//
+//        ContentValues cv2 = new ContentValues();
+//        cv2.put(SquawkContract.COLUMN_DATE, 1487968811043L);
+//        cv2.put(SquawkContract.COLUMN_AUTHOR_KEY, SquawkContract.ASSER_KEY);
+//        cv2.put(SquawkContract.COLUMN_AUTHOR, "TheRealAsser");
+//        cv2.put(SquawkContract.COLUMN_MESSAGE, "I have the best hat");
+//        getContentResolver().insert(SquawkProvider.SquawkMessages.CONTENT_URI, cv2);
 
     }
 
@@ -111,7 +126,6 @@ public class MainActivity extends AppCompatActivity implements
     /**
      * Loader callbacks
      */
-
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         // This method generates a selection off of only the current followers
