@@ -38,6 +38,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
+    private static final String TAG = "MainActivity";
     private static String LOG_TAG = MainActivity.class.getSimpleName();
     private static final int LOADER_ID_MESSAGES = 0;
 
@@ -86,9 +87,12 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
-        // TODO (1) Get the test data here from the extras bundle that came with this intent.
+        // DONE (1) Get the test data here from the extras bundle that came with this intent.
         // To confirm that the data was passed in, make sure to show the data in a log statement.
-
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && extras.containsKey("test")){
+            Log.d(TAG, "Extra data: " + extras.getString("test"));
+        }
     }
 
     @Override
