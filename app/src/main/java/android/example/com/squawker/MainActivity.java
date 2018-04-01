@@ -36,6 +36,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -139,3 +140,4 @@ public class MainActivity extends AppCompatActivity implements
         mAdapter.swapCursor(null);
     }
 }
+
